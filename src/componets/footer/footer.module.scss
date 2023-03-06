@@ -1,0 +1,43 @@
+@import "../../style/mixins";
+@import "../../style/colors";
+
+.container{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  @include display-flex(space-between);
+  padding: 16px;
+  background: $jazzy_jade;
+  opacity: .9;
+  border-radius: 0 0 8px 8px;
+
+  & span, a{
+    color: $fresh_guacamole;
+  }
+
+  & a, button{
+    text-decoration: none;
+    background: $fresh_guacamole;
+    color: $jazzy_jade;
+    padding: 7px 11px ;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid $fresh_guacamole;
+
+    &:hover{
+      background: $jazzy_jade;
+      color: $fresh_guacamole;
+    }
+  }
+
+  .inactive{
+    cursor: auto;
+    color: $diamond_dust;
+
+    &:hover{
+      background: $fresh_guacamole;
+      color: $diamond_dust;
+    }
+  }
+}

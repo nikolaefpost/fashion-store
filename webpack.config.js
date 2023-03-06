@@ -27,18 +27,20 @@ let conf = {
         rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: '/node_modules/'
+                exclude: path.resolve(__dirname, "node_modules"),
+                use: 'babel-loader'
             },
             {
-                test: /\.(c|sa|sc)ss$/i,
+                test: /\.module\.(c|sa|sc)ss$/i,
                 use: [
                      MiniCssExtractPlugin.loader,
                     {
                         loader: "css-loader",
-                        // options: {
-                        //     url: false,
-                        // },
+                        options: {
+                            modules: {
+                                localIdentName:'[name]__[local]--[hash:base64:5]',
+                            },
+                        },
                     },
                     {
                         loader: "postcss-loader",
@@ -53,11 +55,22 @@ let conf = {
                     "sass-loader",
                 ],
             },
+            {
+                // test: /^((?!\.module).)*(c|sa|sc)ss$/i,
+                test: /^((?!\.module).)*css$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                    },
+                ],
+            },
         ]
     },
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js', ".css", ".scss"],
-    },
+
+    // resolve: {
+    //     extensions: ['.tsx', '.ts', '.js', ".css", ".scss"],
+    // },
 }
 
 module.exports = (env, options) => {

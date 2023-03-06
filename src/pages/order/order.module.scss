@@ -1,0 +1,65 @@
+@import "../../style/mixins";
+@import "../../style/colors";
+
+.order_form{
+  position: absolute;
+  width: auto;
+  left: calc(50% - 120px);;
+  top: calc(50% - 90px);
+  @include display-flex;
+
+  & form{
+    @include display-flex();
+    flex-direction: column;
+  }
+
+  & .input_block{
+    //width: 200px;
+    padding-top: 20px;
+    position: relative;
+
+    & input {
+      all: unset;
+      @include fonts(400, 14px, 16px, $jazzy_jade);
+      border: 1px solid $jazzy_jade;
+      background: transparent;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 6px;
+
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #2c326f inset;
+        -webkit-text-fill-color: white !important;
+      }
+
+      &::placeholder {
+        @include fonts(400, 14px, 16px, $jazzy_jade);
+      }
+    }
+
+    & .error{
+      font-family: "Gill Sans", sans-serif;
+      position: absolute;
+      top: 6px;
+      right: 0;
+      @include fonts(400, 10px, 10px,  $hot_pink)
+    }
+  }
+
+  & .submit_button{
+    margin-top: 20px;
+    width: 100%;
+    background: $jazzy_jade;
+    color: $ambrosia_cake;
+    padding: 7px 11px ;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid $jazzy_jade;
+
+    &:hover{
+      background: $ambrosia_cake;
+      color: $jazzy_jade;
+    }
+  }
+
+}

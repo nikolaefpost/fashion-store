@@ -1,0 +1,36 @@
+@import "../../style/mixins";
+@import "../../style/colors";
+
+.nav{
+  @include display-flex(space-between);
+  background: $jazzy_jade;
+  padding: 16px;
+  color: $fresh_guacamole;
+  position: fixed;
+  width: 100vw;
+  opacity: .9;
+  border-radius:  8px 8px 0 0;
+  z-index: 11;
+
+  & ul{
+    @include display-flex(flex-start);
+    gap: 16px;
+    margin: 0;
+
+    & li {
+      list-style-type: none;
+
+      & a{
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+
+  & button{
+    border: none;
+    background: transparent;
+    color: inherit;
+  }
+
+}
