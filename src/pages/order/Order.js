@@ -7,10 +7,12 @@ import BootstrapModal from "../../componets/modal/BootstrapModal";
 import * as yup from "yup";
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useUser} from "../../context/user";
-
+import InputForm from "../../componets/inputForm/InputForm";
 
 import styles from "./order.module.scss"
 
+
+const form = ["firstName", "email", "phone"]
 
 const schema = yup
     .object({
@@ -33,17 +35,15 @@ const schema = yup
 
 const Order = () => {
 
-    const {user, handleSetUser} = useUser();
-
-    const {total} = useOrder();
-    const {text} = useLanguage();
+    const { user, handleSetUser } = useUser();
+    const { total } = useOrder();
+    const { text } = useLanguage();
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => {
-        if (user.firstName)
-        setShow(true)
+        if (user.firstName) setShow(true)
     };
 
     const {
@@ -66,22 +66,7 @@ const Order = () => {
     return (
         <div className={styles.order_form}>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className={styles.input_block}>
-                    {!!errors.firstName && <span className={styles.error}>{errors.firstName.message}</span>}
-                    <input type="text" placeholder="firstName" {...register("firstName")} />
-                </div>
-                <div className={styles.input_block}>
-                    {!!errors.email && <span className={styles.error}>{errors.email.message}</span>}
-                    <input type="text" placeholder="email" {...register("email")} />
-                </div>
-                <div className={styles.input_block}>
-                    {!!errors.phone && <span className={styles.error}>{errors.phone.message}</span>}
-                    <input type="text" placeholder="phone" {...register("phone")} />
-                </div>
-
-
-
-
+                {form.map(item => <InputForm key={item}  register={register} errors={errors} field={item}/>)}
                 <button className={styles.submit_button} type="submit">Save data</button>
             </form>
             <Footer total={total} linkName={text.order} onModal={handleShow}/>
