@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from "../componets/nav/nav";
 import Footer from "../componets/footer/Footer";
 import {useOrder} from "../context/orderData";
 import {useLanguage} from "../context/setting";
