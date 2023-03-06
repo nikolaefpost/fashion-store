@@ -8,7 +8,7 @@ import {useUser} from "../context/user";
 const Result = () => {
     const {total, order} = useOrder();
     const {text} = useLanguage();
-    const {user, handleSetUser} = useUser();
+    const {user} = useUser();
     return (
         <div>
             <h3>{text.check_the_entered}!</h3>

@@ -1,0 +1,4 @@
+Шрифты и изображения не подключены
+node modules попадают в dist
+подключить CSS фреймворки через SCSS
+useOnClickOutside сделать вариант при событии onClick
