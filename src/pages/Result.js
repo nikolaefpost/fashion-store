@@ -4,6 +4,7 @@ import {useOrder} from "../context/orderData";
 import {useLanguage} from "../context/setting";
 import {useUser} from "../context/user";
 
+
 const Result = () => {
     const {total, order} = useOrder();
     const {text} = useLanguage();
