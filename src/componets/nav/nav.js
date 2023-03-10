@@ -4,10 +4,13 @@ import {NavLink} from "react-router-dom";
 import style from "./nav.module.scss"
 import {useLanguage} from "../../context/setting";
 import {useUser} from "../../context/user";
+import currentUser from "../../store/userData";
+import {observer} from "mobx-react-lite";
 
 const Nav = () => {
     const {text, lang, onChangeLang } = useLanguage();
-    const {user, deleteUser} = useUser();
+    // const {user, deleteUser} = useUser();
+    const { user, deleteUser } = currentUser;
 
     let activeStyle = {
         textDecoration: "underline"
@@ -51,4 +54,4 @@ const Nav = () => {
     );
 };
 
-export default Nav;
+export default observer(Nav);

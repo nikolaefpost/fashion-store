@@ -29,6 +29,7 @@ class EmployeeService {
 
 export class OrderData {
     order = [];
+    isLoading = true
 
     constructor() {
         // makeObservable(this, {
@@ -42,6 +43,7 @@ export class OrderData {
         // })
         makeAutoObservable(this)
         this.employeeService = new EmployeeService()
+        this.getProducts()
     }
 
 
@@ -50,9 +52,11 @@ export class OrderData {
     }
 
     getProducts = () => {
+        this.isLoading = true
         this.employeeService.getEmployees().then((data) => {
             runInAction(() => {
                 this.setProducts(data)
+                this.isLoading = false
             })
         })
     }
@@ -74,5 +78,5 @@ export class OrderData {
 }
 
 const data = new OrderData();
-data.getProducts()
+// data.getProducts()
 export default data;

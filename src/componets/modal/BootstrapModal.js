@@ -3,11 +3,13 @@ import {Button, Modal} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import {useUser} from "../../context/user";
 import {useLanguage} from "../../context/setting";
+import currentUser from "../../store/userData";
 
 const BootstrapModal = ({show, handleClose, }) => {
     const [conf, setConf] = useState(false)
     const navigate = useNavigate();
-    const {user} = useUser();
+    // const {user} = useUser();
+    const { user } = currentUser;
     const {text} = useLanguage();
 
     const handleExited = () => {

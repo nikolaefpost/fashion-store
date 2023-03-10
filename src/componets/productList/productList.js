@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import style from "../style/_home.module.scss"
-import MinMaxRef from "./min_max/minMaxRef";
-import Modal from "./modal/Modal";
+import MinMaxRef from "../min_max/minMaxRef";
+import Modal from "../modal/Modal";
 import {Button} from "react-bootstrap";
-import BootstrapModal from "./modal/BootstrapModal";
+import BootstrapModal from "../modal/BootstrapModal";
+
+import styles from "./productList.module.scss"
 
 
 const ProductList = () => {
@@ -41,7 +42,7 @@ const ProductList = () => {
     return (
         <div>
             <h2>Product list</h2>
-            <table>
+            <table className={styles.table}>
                 <tbody>
                 <tr>
                     <th>#</th>
@@ -55,7 +56,7 @@ const ProductList = () => {
                 {data.map((elem, i)=> (
                     <tr key={elem.id}>
                         <td>{i+1}</td>
-                        <td className={style.title}>{elem.title}</td>
+                        <td className={styles.title}>{elem.title}</td>
                         <td>
                             <img src={elem.image}/>
                         </td>

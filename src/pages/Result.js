@@ -5,14 +5,17 @@ import {useLanguage} from "../context/setting";
 import {useUser} from "../context/user";
 import {observer} from "mobx-react-lite";
 import orderData from "../store/orderData";
+import currentUser from "../store/userData";
 
 
 
-const Result = observer(() => {
+const Result = () => {
     // const {total, order} = useOrder();
     const {total, order} = orderData;
     const {text} = useLanguage();
-    const {user} = useUser();
+    // const {user} = useUser();
+    const {user} = currentUser;
+
     return (
         <div>
             <h3>{text.check_the_entered}!</h3>
@@ -25,6 +28,6 @@ const Result = observer(() => {
             <Footer />
         </div>
     );
-});
+};
 
-export default Result;
+export default observer(Result);
