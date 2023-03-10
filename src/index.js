@@ -1,4 +1,6 @@
-// import "./index.scss";
+import "./index.scss";
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import {createRoot} from 'react-dom/client';
@@ -20,3 +22,5 @@ createRoot(document.getElementById("app")).render(
         </UserProvider>
     </React.StrictMode>
 );
+
+// import "./test/testCard"

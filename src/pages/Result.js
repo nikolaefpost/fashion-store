@@ -1,12 +1,16 @@
 import React from 'react';
 import Footer from "../componets/footer/Footer";
-import {useOrder} from "../context/orderData";
+// import {useOrder} from "../context/orderData";
 import {useLanguage} from "../context/setting";
 import {useUser} from "../context/user";
+import {observer} from "mobx-react-lite";
+import orderData from "../store/orderData";
 
 
-const Result = () => {
-    const {total, order} = useOrder();
+
+const Result = observer(() => {
+    // const {total, order} = useOrder();
+    const {total, order} = orderData;
     const {text} = useLanguage();
     const {user} = useUser();
     return (
@@ -18,9 +22,9 @@ const Result = () => {
                 <li>Email: {user.email}</li>
                 <li>Phone: {user.phone}</li>
             </ul>
-            <Footer total={total} />
+            <Footer />
         </div>
     );
-};
+});
 
 export default Result;

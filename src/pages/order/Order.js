@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import {useForm} from "react-hook-form";
 import Footer from "../../componets/footer/Footer";
-import {useOrder} from "../../context/orderData";
 import {useLanguage} from "../../context/setting";
 import BootstrapModal from "../../componets/modal/BootstrapModal";
 import * as yup from "yup";
@@ -36,7 +35,6 @@ const schema = yup
 const Order = () => {
 
     const { user, handleSetUser } = useUser();
-    const { total } = useOrder();
     const { text } = useLanguage();
 
     const [show, setShow] = useState(false);
@@ -50,26 +48,22 @@ const Order = () => {
         register,
         formState: {errors},
         handleSubmit,
-        setValue
     } = useForm({
-        mode: "onBlur",
+        mode: "onTouched",
         resolver: yupResolver(schema),
-    });
-    useEffect(() => {
-        if (!user?.firstName) return;
-        setValue("firstName", user.firstName)
-        setValue("email", user.email)
-        setValue("phone", user.phone)
-    }, [user]);
+        values: user,
+        shouldFocusError: true,
 
-    const onSubmit = data => handleSetUser(data);
+    });
+
+    const onSubmit = handleSubmit(data => handleSetUser(data));
     return (
         <div className={styles.order_form}>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={onSubmit}>
                 {form.map(item => <InputForm key={item}  register={register} errors={errors} field={item}/>)}
                 <button className={styles.submit_button} type="submit">Save data</button>
             </form>
-            <Footer total={total} linkName={text.order} onModal={handleShow}/>
+            <Footer linkName={text.order} onModal={handleShow}/>
             <BootstrapModal handleClose={handleClose} show={show}/>
         </div>
     );

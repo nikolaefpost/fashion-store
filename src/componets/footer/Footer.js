@@ -2,12 +2,14 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import {useUser} from "../../context/user";
 import style from "./footer.module.scss"
+import {observer} from "mobx-react-lite";
+import orderData from "../../store/orderData";
 
 
 
-const Footer = ({total, linkName, linkUrl, onModal}) => {
+const Footer = ({ linkName, linkUrl, onModal}) => {
     const { user } = useUser();
-
+const { total } = orderData
     return (
         <div className={style.container}>
             <span>Total: {total}</span>
@@ -23,4 +25,4 @@ const Footer = ({total, linkName, linkUrl, onModal}) => {
     );
 };
 
-export default Footer;
+export default observer(Footer);

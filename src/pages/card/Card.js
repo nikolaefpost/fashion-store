@@ -1,17 +1,22 @@
 import React from 'react';
 import {TiDelete} from "react-icons/ti"
-import {useOrder} from "../../context/orderData";
+// import {useOrder} from "../../context/orderData";
 import style from "./card.module.scss";
 import MinMaxRef from "../../componets/min_max/minMaxRef";
 import Footer from "../../componets/footer/Footer";
 import {useLanguage} from "../../context/setting";
 import {useUser} from "../../context/user";
+import orderData from "../../store/orderData";
+import {observer} from "mobx-react-lite";
 
 
 const Card = () => {
-    const {order, total, changeCnt, deleteProduct} = useOrder();
+    // const {order, total, changeCnt, deleteProduct} = useOrder();
+    const {order, changeCnt, deleteProduct} = orderData;
+
     const {text} = useLanguage();
-    const {user, handleSetUser} = useUser();
+    const {user} = useUser();
+
 
     return (
         <div className={style.card_table}>
@@ -31,7 +36,7 @@ const Card = () => {
                     <tr key={elem.id}>
                         <td>{i + 1}</td>
                         <td>
-                            <img src={elem.image}/>
+                            <img src={elem.image} alt="products"/>
                         </td>
                         <td className={style.title}>{elem.title}</td>
                         <td>{elem.price}</td>
@@ -46,9 +51,9 @@ const Card = () => {
                 )}
                 </tbody>
             </table>
-            <Footer total={total} linkName={text.checkout} linkUrl={user?.firstName? "/result" : "/order"}/>
+            <Footer  linkName={text.checkout} linkUrl={user?.firstName? "/result" : "/order"}/>
         </div>
     );
 };
 
-export default Card;
+export default observer(Card);
