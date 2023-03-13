@@ -1,11 +1,12 @@
 import {makeAutoObservable} from "mobx";
+// import rootStore from "../context/rootStore";
 
 
 export class UserData {
     user = {}
     storage = window.localStorage;
 
-    constructor() {
+    constructor(rootStore) {
         // makeObservable(this, {
         //     order: observable,
         //     setProducts: action,
@@ -15,7 +16,10 @@ export class UserData {
         //     total: computed
         //
         // })
-        makeAutoObservable(this)
+        makeAutoObservable(this,{ rootStore: false })
+        this.rootStore = rootStore
+        this.getUserStorage()
+        // this.rootStore = rootStore
     }
 
     handleSetUser = (user) => {
@@ -35,6 +39,5 @@ export class UserData {
     }
 }
 
-const currentUser = new UserData();
-currentUser.getUserStorage();
-export default currentUser
+// const currentUser = new UserData();
+// export default currentUser

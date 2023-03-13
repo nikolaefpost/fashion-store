@@ -1,17 +1,18 @@
 import React from 'react';
 import MinMaxRef from "../min_max/minMaxRef";
 import {TiDelete} from "react-icons/ti";
-import orderData from "../../store/orderData";
+// import orderData from "../../store/orderData";
 import {observer} from "mobx-react-lite";
 
 import styles from "./productList.module.scss";
+import {useRoot} from "../../context/rootStore";
 
 
 const ProductListMobx = () => {
-
-    const {order, changeCnt, deleteProduct, isLoading} = orderData;
+    const { orderStore } = useRoot();
+    // const {order, changeCnt, deleteProduct, isLoading} = orderData;
     // const {order, total, changeCnt, deleteProduct} = useOrder();
-    return isLoading ? <div>Loading....</div> : (
+    return orderStore.isLoading ? <div>Loading....</div> : (
         <table className={styles.table}>
             <tbody>
             <tr>
@@ -23,7 +24,7 @@ const ProductListMobx = () => {
                 <th>Total</th>
                 <th>Delete</th>
             </tr>
-            {order.map((elem, i) => (
+            {orderStore.order.map((elem, i) => (
                 <tr key={elem.id}>
                     <td>{i + 1}</td>
                     <td>
@@ -32,10 +33,10 @@ const ProductListMobx = () => {
                     <td className={styles.title}>{elem.title}</td>
                     <td>{elem.price}</td>
                     <td>
-                        <MinMaxRef min={0} max={elem.id} cnt={elem.cmt} changeCnt={cmt => changeCnt(elem.id, cmt)}/>
+                        <MinMaxRef min={0} max={elem.id} cnt={elem.cmt} changeCnt={cmt => orderStore.changeCnt(elem.id, cmt)}/>
                     </td>
                     <td>{(elem.cmt * elem.price).toFixed(2)}</td>
-                    <td onClick={() => deleteProduct(elem.id)}>
+                    <td onClick={() => orderStore.deleteProduct(elem.id)}>
                         <TiDelete/>
                     </td>
                 </tr>)

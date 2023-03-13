@@ -1,12 +1,13 @@
 import React from 'react';
 import InputForm from "../inputForm/InputForm";
-import currentUser from "../../store/userData";
+// import currentUser from "../../store/userData";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import styles from "../../pages/order/order.module.scss";
 import {observer} from "mobx-react-lite";
+import {useRoot} from "../../context/rootStore";
 
 const form = ["firstName", "email", "phone"]
 
@@ -32,7 +33,8 @@ const schema = yup
 const Form = () => {
 
     // const { user, handleSetUser } = useUser();
-    const { user, handleSetUser } = currentUser;
+    // const { user, handleSetUser } = currentUser;
+    const { userStore } = useRoot();
 
     const {
         register,
@@ -41,12 +43,12 @@ const Form = () => {
     } = useForm({
         mode: "onTouched",
         resolver: yupResolver(schema),
-        values: user,
+        values: userStore.user,
         shouldFocusError: true,
 
     });
 
-    const onSubmit = handleSubmit(data => handleSetUser(data));
+    const onSubmit = handleSubmit(data => userStore.handleSetUser(data));
     return (
         <form onSubmit={onSubmit}>
             {form.map(item => <InputForm key={item}  register={register} errors={errors} field={item}/>)}

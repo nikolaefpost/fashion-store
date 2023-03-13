@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
 import {Button, Modal} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import {useUser} from "../../context/user";
+// import {useUser} from "../../context/user";
 import {useLanguage} from "../../context/setting";
-import currentUser from "../../store/userData";
+// import currentUser from "../../store/userData";
+import {useRoot} from "../../context/rootStore";
 
 const BootstrapModal = ({show, handleClose, }) => {
     const [conf, setConf] = useState(false)
     const navigate = useNavigate();
     // const {user} = useUser();
-    const { user } = currentUser;
+    // const { user } = currentUser;
+    const { userStore } = useRoot();
     const {text} = useLanguage();
 
     const handleExited = () => {
@@ -33,9 +35,9 @@ const BootstrapModal = ({show, handleClose, }) => {
             <Modal.Body>
                 <h3>{text.check_the_entered}!</h3>
                 <ul>
-                    <li>First Name: {user?.firstName}</li>
-                    <li>Email: {user?.email}</li>
-                    <li>Phone: {user?.phone}</li>
+                    <li>First Name: {userStore.user?.firstName}</li>
+                    <li>Email: {userStore.user?.email}</li>
+                    <li>Phone: {userStore.user?.phone}</li>
                 </ul>
             </Modal.Body>
             <Modal.Footer>

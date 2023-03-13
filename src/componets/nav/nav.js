@@ -1,16 +1,18 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {NavLink} from "react-router-dom";
 
 import style from "./nav.module.scss"
 import {useLanguage} from "../../context/setting";
-import {useUser} from "../../context/user";
-import currentUser from "../../store/userData";
+// import {useUser} from "../../context/user";
+// import currentUser from "../../store/userData";
 import {observer} from "mobx-react-lite";
+import {useRoot} from "../../context/rootStore";
 
 const Nav = () => {
     const {text, lang, onChangeLang } = useLanguage();
     // const {user, deleteUser} = useUser();
-    const { user, deleteUser } = currentUser;
+    // const { user, deleteUser } = currentUser;
+    const { userStore } = useRoot();
 
     let activeStyle = {
         textDecoration: "underline"
@@ -45,9 +47,9 @@ const Nav = () => {
                 </li>
             </ul>
 
-            {!!user && !!user.firstName && <div>
-                <span>Hi {user?.firstName}!</span>
-                <button onClick={deleteUser}>exit</button>
+            {!!userStore.user && !!userStore.user.firstName && <div>
+                <span>Hi {userStore.user?.firstName}!</span>
+                <button onClick={userStore.deleteUser}>exit</button>
             </div>}
             <button onClick={onChangeLang}>{lang}</button>
         </nav>
