@@ -1,17 +1,15 @@
 import React, {useState} from 'react';
 import {Button, Modal} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import {useUser} from "../../context/user";
 import {useLanguage} from "../../context/setting";
-// import currentUser from "../../store/userData";
-import {useRoot} from "../../context/rootStore";
+// import {useRoot} from "../../context/rootStore";
+import rootStore from "../../store/rootStore";
+import {observer} from "mobx-react-lite";
 
 const BootstrapModal = ({show, handleClose, }) => {
     const [conf, setConf] = useState(false)
     const navigate = useNavigate();
-    // const {user} = useUser();
-    // const { user } = currentUser;
-    const { userStore } = useRoot();
+    const { userStore } = rootStore;
     const {text} = useLanguage();
 
     const handleExited = () => {
@@ -50,4 +48,4 @@ const BootstrapModal = ({show, handleClose, }) => {
     );
 };
 
-export default BootstrapModal;
+export default observer(BootstrapModal);

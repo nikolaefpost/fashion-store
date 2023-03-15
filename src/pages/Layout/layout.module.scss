@@ -1,0 +1,15 @@
+@import "../../style/mixins";
+@import "../../style/colors";
+@import "../../style/index.module";
+
+.outlet{
+  position: relative;
+  height: 100vh;
+
+  & .content{
+    //padding: 68px 16px 78px 16px ;
+    min-height: 100%;
+    position: relative;
+  }
+
+}

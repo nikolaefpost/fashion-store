@@ -6,10 +6,11 @@ import {observer} from "mobx-react-lite";
 
 import styles from "./productList.module.scss";
 import {useRoot} from "../../context/rootStore";
+import rootStore from "../../store/rootStore";
 
 
 const ProductListMobx = () => {
-    const { orderStore } = useRoot();
+    const { orderStore } = rootStore;
     // const {order, changeCnt, deleteProduct, isLoading} = orderData;
     // const {order, total, changeCnt, deleteProduct} = useOrder();
     return orderStore.isLoading ? <div>Loading....</div> : (

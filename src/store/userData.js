@@ -4,7 +4,9 @@ import {makeAutoObservable} from "mobx";
 
 export class UserData {
     user = {}
+    form = ["firstName", "email", "phone"];
     storage = window.localStorage;
+    subscriptEmail = {}
 
     constructor(rootStore) {
         // makeObservable(this, {
@@ -25,6 +27,10 @@ export class UserData {
     handleSetUser = (user) => {
         this.user = user
         this.storage.setItem("currentUser", JSON.stringify(user));
+    }
+
+    handleSetSubscriptEmail = (email) => {
+        this.subscriptEmail = email
     }
 
     deleteUser = () => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import {createBrowserRouter} from "react-router-dom";
-import {Card, Order, Result, Layout} from "./pages";
+import {Card, Order, Result, Layout, Error404, Home} from "./pages";
+
 
 
 
@@ -10,7 +11,11 @@ export const router = createBrowserRouter([
         element: <Layout  />,
         children: [
             {
-                path: "/",
+                path: "",
+                element: <Home  />,
+            },
+            {
+                path: "/card",
                 element: <Card  />,
             },
             {
@@ -20,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 path: "result",
                 element: <Result/>,
+            },
+            {
+                path: "*",
+                element: <Error404/>,
             },
         ],
     },

@@ -1,30 +1,42 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
-// import {useUser} from "../../context/user";
-import style from "./footer.module.scss"
-import { observer } from "mobx-react-lite";
-// import orderData from "../../store/orderData";
-import { useRoot } from "../../context/rootStore";
+import { Link } from "react-router-dom";
+
+import styles from "./footer.module.scss"
+import {insta, telegram} from "../../assets/icon";
 
 
-const Footer = ({linkName, linkUrl, onModal}) => {
-    // const { user } = useUser();
-    // const {user} = currentUser;
-    // const {total} = orderData
-    const { orderStore, userStore } = useRoot();
+const Footer = () => {
+
     return (
-        <div className={style.container}>
-            <span>Total: {orderStore.total}</span>
-            {!!linkUrl && <NavLink
-                to={linkUrl}
-            >
-                {linkName}
-            </NavLink>}
-            {!!onModal && <button onClick={onModal} className={userStore.user?.firstName ? undefined : style.inactive}>
-                {linkName}
-            </button>}
+        <div className={styles.container}>
+            <div className={styles.block}>
+                <h3>КОМПАНИЯ</h3>
+                <Link to="">О нас</Link>
+                <Link to="">Контакты</Link>
+            </div>
+            <div className={styles.block}>
+                <h3>ПОЛЕЗНОЕ</h3>
+                <Link to="">Оплата и доставка</Link>
+                <Link to="">Условия возврата</Link>
+                <Link to="">Бонусная система</Link>
+            </div>
+            <div className={styles.block}>
+                <h3>ПОКУПАТЕЛЮ</h3>
+                <Link to="">Избранное</Link>
+                <Link to="">Публичная оферта</Link>
+                <Link to="">Политика конфиденциальности</Link>
+            </div>
+            <div className={styles.block}>
+                <h3>КОНТАКТЫ</h3>
+                <div className={styles.social}>
+                    <img alt="instagram" src={insta}/>
+                    <img alt="telegram" src={telegram}/>
+                </div>
+                <span>+38(093) 123 45 67</span>
+                <span>info@defile.com</span>
+            </div>
         </div>
     );
 };
 
-export default observer(Footer);
+export default Footer;

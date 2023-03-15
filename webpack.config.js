@@ -7,7 +7,8 @@ let conf = {
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'main.js',
-        publicPath: '/dist/'
+        publicPath: '/dist/',
+        assetModuleFilename: "assets/[name][ext]"
     },
     devServer: {
         static: {
@@ -16,7 +17,8 @@ let conf = {
         compress: true,
         port: 3000,
         open: true,
-        hot: true
+        hot: true,
+        historyApiFallback: true,
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -64,6 +66,36 @@ let conf = {
                         loader: "css-loader",
                     },
                 ],
+            },
+            {
+                test: /\.(jpe?g|png|webp|gif|svg)$/i,
+                use: {
+                    loader: "image-webpack-loader",
+                    options: {
+                        mozjpeg: {
+                            progressive: true,
+                        },
+                        // optipng.enabled: false will disable optipng
+                        optipng: {
+                            enabled: false,
+                        },
+                        pngquant: {
+                            quality: [0.65, 0.90],
+                            speed: 4
+                        },
+                        gifsicle: {
+                            interlaced: false,
+                        },
+                        // the webp option will enable WEBP
+                        webp: {
+                            quality: 75
+                        }
+                    }
+                },
+                type: "asset/resource",
+                generator: {
+                    filename: "assets/image/[name][ext]"
+                }
             },
         ]
     },

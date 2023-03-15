@@ -3,18 +3,20 @@
 
 
 .input_block{
-  //width: 200px;
+  width: 100%;
   padding-top: 20px;
   position: relative;
 
   & input {
     all: unset;
-    @include fonts(400, 14px, 16px, $jazzy_jade);
-    border: 1px solid $jazzy_jade;
+    @include fonts(200, 16px, 19px, rgba(37, 37, 37, 0.5));
+    border: 0.5px solid $accent;
     background: transparent;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 6px;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
 
     &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 1000px #2c326f inset;
@@ -22,12 +24,13 @@
     }
 
     &::placeholder {
-      @include fonts(400, 14px, 16px, $jazzy_jade);
+      @include fonts(200, 16px, 19px, rgba(37, 37, 37, 0.5));
+      text-align: center;
     }
   }
 
   .error_border{
-    border: 1px solid $hot_pink;
+    border: 1px solid $error;
   }
 
   & .error{
@@ -35,6 +38,6 @@
     position: absolute;
     top: 6px;
     right: 0;
-    @include fonts(400, 10px, 10px,  $hot_pink)
+    @include fonts(400, 10px, 10px,  $error)
   }
 }

@@ -2,42 +2,40 @@
 @import "../../style/colors";
 
 .container{
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  @include display-flex(space-between);
-  padding: 16px;
-  background: $jazzy_jade;
-  opacity: .9;
-  border-radius: 0 0 8px 8px;
+  @include display-flex(center, flex-start);
+  gap: 45px;
+  padding: 0 150px 45px;
 
-  & span, a{
-    color: $fresh_guacamole;
-  }
+  & .block{
+    width: 25%;
+    @include display-flex(center, flex-start);
+    flex-direction: column;
 
-  & a, button{
-    text-decoration: none;
-    background: $fresh_guacamole;
-    color: $jazzy_jade;
-    padding: 7px 11px ;
-    border-radius: 6px;
-    cursor: pointer;
-    border: 1px solid $fresh_guacamole;
-
-    &:hover{
-      background: $jazzy_jade;
-      color: $fresh_guacamole;
+    & h3{
+      @include fonts(300, 20px, 23px, $accent);
+      margin-bottom: 10px;
     }
-  }
 
-  .inactive{
-    cursor: auto;
-    color: $diamond_dust;
+    & a{
+      margin-top: 10px;
+      @include fonts(200, 16px, 19px, $accent);
+      text-decoration: none;
 
-    &:hover{
-      background: $fresh_guacamole;
-      color: $diamond_dust;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+
+    & .social{
+      margin-top: 10px;
+
+      & img{
+        cursor: pointer;
+
+        &:hover{
+          filter: drop-shadow(0px 5px 7px rgba(37, 37, 37, 0.15));
+        }
+      }
     }
   }
 }

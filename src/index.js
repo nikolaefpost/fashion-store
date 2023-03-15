@@ -3,11 +3,11 @@ import "./index.scss";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
-import {createRoot} from 'react-dom/client';
-import {RouterProvider} from "react-router-dom"
-import {router} from "./app";
-import {LanguageProvider} from "./context/setting"
-import rootStore, {RootContext} from "./context/rootStore";
+import { createRoot } from 'react-dom/client';
+import { RouterProvider } from "react-router-dom"
+import { router } from "./app";
+import { LanguageProvider } from "./context/setting"
+import rootStore, { RootContext } from "./context/rootStore";
 // import {OrderProvider} from "./context/orderData";
 // import {UserProvider} from "./context/user";
 

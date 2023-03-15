@@ -1,8 +1,9 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
-import Nav from "../componets/nav/nav";
+import Nav from "../../componets/nav/nav";
 
-import style from "../style/_home.module.scss"
+import style from "./layout.module.scss"
+import Footer from "../../componets/footer/Footer";
 
 
 
@@ -16,6 +17,7 @@ const Layout = () => {
                 <div className={style.content}>
                     <Outlet/>
                 </div>
+                <Footer/>
             </div>
     );
 };
