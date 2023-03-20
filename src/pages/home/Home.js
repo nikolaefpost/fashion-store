@@ -12,7 +12,7 @@ import SubscriptForm from "./SubscriptForm";
 
 
 const Home = () => {
-    const { orderStore } = rootStore;
+    const { productStore } = rootStore;
     return (
         <div className={styles.content}>
             <div className={styles.new_block}>
@@ -25,7 +25,7 @@ const Home = () => {
             </div>
             <div className={styles.category}>
                 <h2>Категории</h2>
-                <HomeSlider data={orderStore.category} />
+                <HomeSlider data={productStore.category} />
             </div>
             <div className={styles.subscription}>
                 <h2>Узнайте  первым о новинках</h2>

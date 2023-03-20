@@ -1,6 +1,6 @@
 import React from 'react';
 import {createBrowserRouter} from "react-router-dom";
-import {Card, Order, Result, Layout, Error404, Home} from "./pages";
+import {Catalog, Order, Result, Layout, Error404, Home} from "./pages";
 
 
 
@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/card",
-                element: <Card  />,
+                element: <Catalog  />,
             },
             {
                 path: "order",

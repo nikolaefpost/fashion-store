@@ -9,7 +9,7 @@ export const data = {
         check_the_entered: 'Check the entered data'
     },
     rus: {
-        card: 'корзина',
+        card: 'каталог',
         order: 'заказ',
         result: 'результат',
         checkout: 'оформить заказ',
@@ -20,7 +20,7 @@ export const data = {
 const SettingContext = createContext({});
 
 export const LanguageProvider = ({children}) => {
-    const [lang, setLang] = useState("Eng");
+    const [lang, setLang] = useState("Рус");
     const [text, setText] = useState({});
 
     const onChangeLang = () => setLang(prev => {

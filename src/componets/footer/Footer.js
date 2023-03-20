@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
-import styles from "./footer.module.scss"
 import {insta, telegram} from "../../assets/icon";
 
+
+import styles from "./footer.module.scss"
 
 const Footer = () => {
 

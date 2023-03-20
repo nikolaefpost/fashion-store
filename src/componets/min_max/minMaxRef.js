@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import PropTypes from "prop-types";
 
 import style from "./min_max.module.scss"
-import { useWindowSize } from "../../hooks/useWindowSize";
 
 const MinMaxRef = ({
                     min = 1,

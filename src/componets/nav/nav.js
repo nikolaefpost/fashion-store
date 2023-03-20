@@ -3,8 +3,6 @@ import {NavLink} from "react-router-dom";
 import styles from "./nav.module.scss"
 import {useLanguage} from "../../context/setting";
 import {observer} from "mobx-react-lite";
-import {useRoot} from "../../context/rootStore";
-import rootStore from "../../store/rootStore";
 import {SlArrowDown} from "react-icons/sl"
 
 import { useHref } from "react-router-dom"
@@ -12,7 +10,6 @@ import {MenuIcon, FavoriteIcon, SearchIcon, OrderIcon, UserIcon} from "../../ass
 
 const Nav = () => {
     const {text, lang, onChangeLang } = useLanguage();
-    const { userStore } = rootStore;
     let isHome = useHref() === "/"
 
     const mainStyle = {

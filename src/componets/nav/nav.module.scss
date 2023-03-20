@@ -7,10 +7,9 @@
   padding: 24px 150px;
   color: $main;
   position: absolute;
-  width: 100vw;
+  width: 100%;
   opacity: .9;
   z-index: 11;
-
 
   & .left_block{
     @include display-flex;
