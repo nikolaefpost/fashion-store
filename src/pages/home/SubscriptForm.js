@@ -17,7 +17,6 @@ const schema = yup
 
 const SubscriptForm = () => {
     const { userStore } = rootStore;
-    console.log(userStore.subscriptEmail)
     const {
         register,
         formState: {errors},

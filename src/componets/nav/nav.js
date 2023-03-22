@@ -7,6 +7,7 @@ import {SlArrowDown} from "react-icons/sl"
 
 import { useHref } from "react-router-dom"
 import {MenuIcon, FavoriteIcon, SearchIcon, OrderIcon, UserIcon} from "../../assets/icon";
+import UserIdentification from "./UserIdentification";
 
 const Nav = () => {
     const {text, lang, onChangeLang } = useLanguage();
@@ -66,7 +67,8 @@ const Nav = () => {
                     <SlArrowDown/>
                 </div>
                 <SearchIcon color={isHome? "#FFFFFF":"#252525"} />
-                <UserIcon color={isHome? "#FFFFFF":"#E0BEA2"} />
+                {/*<UserIcon color={isHome? "#FFFFFF":"#E0BEA2"} />*/}
+                <UserIdentification isHome={isHome}/>
                 <FavoriteIcon color={isHome? "#FFFFFF":"#E0BEA2"}/>
                 <OrderIcon color={isHome? "#FFFFFF":"#E0BEA2"} />
 

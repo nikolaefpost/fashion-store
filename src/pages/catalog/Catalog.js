@@ -2,13 +2,14 @@ import React  from 'react';
 import {useLanguage} from "../../context/setting";
 import {AiOutlineRight} from "react-icons/ai"
 import rootStore from "../../store/rootStore";
-
-import styles from "./catalog.module.scss"
 import {observer} from "mobx-react-lite";
 import Sidebar from "./Sidebar";
 import HeaderCatalog from "./HeaderCatalog";
 import ProductList from "./ProductList";
 import {useNavigate} from "react-router-dom";
+
+import styles from "./catalog.module.scss";
+
 
 
 const Catalog = () => {
@@ -16,23 +17,9 @@ const Catalog = () => {
     const navigate = useNavigate();
     const {productStore} = rootStore;
 
-
-    // const [currentCategory, setCurrentCategory] = useState('');
-    //
-    //
-    //
-    // useEffect(()=>{
-    //     if (currentCategory === "") productStore.setList(productStore.product)
-    // },[productStore.product, currentCategory])
-    //
-    // const filterCategory = (category) => {
-    //     productStore.setList(productStore.product.filter(item=>item.category === category));
-    //     setCurrentCategory(category)
-    // }
     const handleHome = () => {
        navigate("/")
     }
-
 
     return (
         <div className={styles.content}>

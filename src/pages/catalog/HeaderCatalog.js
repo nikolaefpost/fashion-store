@@ -13,7 +13,6 @@ import styles from "./catalog.module.scss";
 const HeaderCatalog = ({length}) => {
     const {productStore} = rootStore;
     const [openInfo, setOpenInfo] = useState(false)
-    console.log(productStore.changePriseRange)
     useEffect(() => {
         if (productStore.currentSize || productStore.currentColor || productStore.changePriseRange || productStore.sortingOption) setOpenInfo(true);
         if (!productStore.currentSize && !productStore.currentColor && !productStore.changePriseRange && !productStore.sortingOption) setOpenInfo(false);

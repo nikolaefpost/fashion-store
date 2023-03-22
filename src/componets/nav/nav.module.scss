@@ -7,7 +7,7 @@
   padding: 24px 150px;
   color: $main;
   position: absolute;
-  width: 100%;
+  width: calc(100% - 300px);
   opacity: .9;
   z-index: 11;
 
@@ -40,6 +40,10 @@
   & .right_block{
     @include display-flex;
     gap: 30px;
+
+    & .user_block{
+      position: relative;
+    }
 
     & .language{
       margin-right: 45px;

@@ -19,7 +19,6 @@ const HomeSlider = ({data}) => {
 
     const [shift, setShift] = useState(0)
 
-    console.log(fullWidth, "+", shift, ">", screenWidth)
     const next = () => {
         if ((fullWidth + shift) > (screenWidth - 300)) setShift(prev => prev - shiftStep)
     }

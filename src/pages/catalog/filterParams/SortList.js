@@ -14,7 +14,6 @@ const sortOption = [
 
 const SortList = () => {
     const {productStore} = rootStore;
-    console.log(productStore.list)
     const [openSort, setOpenSort] = useState(false);
     const sortRef = useRef(null);
     useOnClickOutside(sortRef, ()=>setOpenSort(false));

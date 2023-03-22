@@ -2,27 +2,23 @@ import React from 'react';
 import {useWindowSize} from "../../hooks/useWindowSize";
 
 import styles from "./catalog.module.scss";
+import {useNavigate} from "react-router-dom";
+import ProductListCard from "../../componets/productCard/ProductListCard";
+import {recentlyWatchedSave} from "../../helpers/recentlyWatchedSave";
+
 
 const ProductList = ({products}) => {
+    const navigate = useNavigate();
+    const handleTransition = (id) => {
+        recentlyWatchedSave(id)
+         navigate(`/card/${id}`)
+    }
+    const styleM ={width: "310px", height: "499px"}
+
     return (
         <div className={styles.body}>
             {products.map(item => (
-                <div
-                    key={item.id}
-                    className={styles.product}
-                >
-                    <img src={item.image} alt={item.title}/>
-                    <div className={styles.card_text}>
-                        <span className={styles.card_title}>{item.title}</span>
-                        <span className={styles.card_price}>{item.price} грн</span>
-                        <span className={styles.card_size}>XXS XS S M L</span>
-                        <div className={styles.card_color}>
-                            <div className={styles.white}/>
-                            <div className={styles.grey}/>
-                            <div className={styles.beige}/>
-                        </div>
-                    </div>
-                </div>
+                <ProductListCard key={item.id} data={item} style={styleM} handleTransition={handleTransition}   />
             ))}
         </div>
     );

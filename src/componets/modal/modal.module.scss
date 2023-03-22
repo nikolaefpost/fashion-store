@@ -1,26 +1,47 @@
 @import "../../style/mixins";
 @import "../../style/colors";
 
-.content{
+.modal{
   position: fixed;
-  top: 10vh;
-  left: calc(50vw - 250px);
-  width: 500px;
-  height: 80vh;
-  z-index: 10;
-  border: 1px solid red;
-  border-radius: 6px;
-  background: #eae5d0;
-  overflow-y: scroll;
-  padding: 12px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  @include display-flex;
 
-  & span{
+  & .wrapper{
+    width: 100vw;
+    height: 100vh;
     position: absolute;
-    top: 4px;
-    right: 6px;
+    background: #000;
+    opacity: .7;
+    z-index: 101;
+  }
+
+
+  & .content{
+    position: relative;
+    width: 600px;
+    height: 343px;
+    background: #FFFFFF;
+    z-index: 102;
+    padding: 50px 100px;
+
+    & span{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: $main;
+
+      & svg{
+        width: 25px;
+        height: 25px;
+      }
+    }
   }
 
 }
+
+
 
 .is_open{
   display: none;

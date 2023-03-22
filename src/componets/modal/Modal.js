@@ -1,18 +1,22 @@
 import React, {useRef} from 'react';
+import {AiOutlineClose} from "react-icons/ai"
+import styles from "./modal.module.scss"
+import Portal from "./Portal";
 
-import style from "./modal.module.scss"
-import {useOnClickOutside} from "../../hooks/useOnclickOutside";
-
-const Modal = ({ fn, children }) => {
-
-    const refElem = useRef(null);
-    useOnClickOutside(refElem, fn);
+const Modal = ({fn, children}) => {
 
     return (
-        <div ref={refElem} className={style.content}>
-            <span onClick={fn}>X</span>
-            {children}
-        </div>
+        <Portal>
+            <div className={styles.modal}>
+                <div className={styles.wrapper}/>
+                <div className={styles.content}>
+                    <span onClick={fn}><AiOutlineClose/></span>
+                    {children}
+                </div>
+            </div>
+        </Portal>
+
+
     );
 };
 
