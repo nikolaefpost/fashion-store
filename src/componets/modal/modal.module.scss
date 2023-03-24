@@ -21,12 +21,12 @@
   & .content{
     position: relative;
     width: 600px;
-    height: 343px;
+    //height: 343px;
     background: #FFFFFF;
     z-index: 102;
     padding: 50px 100px;
 
-    & span{
+    & .cross{
       position: absolute;
       top: 20px;
       right: 20px;

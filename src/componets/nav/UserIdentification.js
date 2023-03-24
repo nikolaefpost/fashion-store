@@ -3,6 +3,7 @@ import {UserIcon} from "../../assets/icon";
 
 import styles from "./nav.module.scss"
 import Modal from "../modal/Modal";
+import Form from "../form/Form";
 
 const UserIdentification = ({isHome}) => {
 
@@ -18,7 +19,7 @@ const UserIdentification = ({isHome}) => {
         <div className={styles.user_block} onClick={openModal}>
             <UserIcon color={isHome? "#FFFFFF":"#E0BEA2"} />
             {modal && <Modal fn={closeModal}>
-                Modal
+                <Form setModal={setModal} />
             </Modal>}
         </div>
     );

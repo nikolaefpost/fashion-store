@@ -10,7 +10,7 @@ const Modal = ({fn, children}) => {
             <div className={styles.modal}>
                 <div className={styles.wrapper}/>
                 <div className={styles.content}>
-                    <span onClick={fn}><AiOutlineClose/></span>
+                    <span onClick={fn} className={styles.cross}><AiOutlineClose/></span>
                     {children}
                 </div>
             </div>

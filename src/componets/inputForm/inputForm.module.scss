@@ -7,6 +7,10 @@
   padding-top: 20px;
   position: relative;
 
+  .center{
+    text-align: center;
+  }
+
   & input {
     all: unset;
     @include fonts(200, 16px, 19px, rgba(37, 37, 37, 0.5));
@@ -15,8 +19,8 @@
     cursor: pointer;
     height: 50px;
     width: 100%;
-    text-align: center;
     box-sizing: border-box;
+    padding: 0 39px 0 20px;
 
     &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 1000px #2c326f inset;
@@ -39,5 +43,18 @@
     top: 6px;
     right: 0;
     @include fonts(400, 10px, 10px,  $error)
+  }
+
+  & span{
+    position: absolute;
+    right: 20px;
+    top: 36px;
+    cursor: pointer;
+
+    & svg{
+      color: $main;
+      width: 19px;
+      height: 19px;
+    }
   }
 }

@@ -32,7 +32,7 @@ const SubscriptForm = () => {
 
     return (
         <form onSubmit={onSubmit} onClick={()=>clearErrors("email")}>
-            <InputForm register={register} errors={errors} field={"email"} />
+            <InputForm register={register} errors={errors} field={"email"} name="Ваш e-mail*" inputType="text" center />
             <button type="submit">ПОДПИСАТЬСЯ</button>
             <p>
                 Нажимая на кнопку «Подписаться», я соглашаюсь на обработку моих персональных данных
