@@ -3,15 +3,15 @@ import React, {createContext,  useContext, useEffect, useState} from "react";
 export const data = {
     en: {
         card: 'card',
-        order: 'order',
-        result: 'result',
+        new: 'new',
+        aboutUs: 'about Us',
         checkout: 'checkout',
         check_the_entered: 'Check the entered data'
     },
     rus: {
         card: 'каталог',
-        order: 'заказ',
-        result: 'результат',
+        new: 'new',
+        aboutUs: 'о нас',
         checkout: 'оформить заказ',
         check_the_entered: 'Проверте введенные данные'
     },

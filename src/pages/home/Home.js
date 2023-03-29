@@ -1,15 +1,13 @@
 import React from 'react';
 import {new1, new2, new3} from "../../assets/img"
-
-const news = [new1, new2, new3]
-
-import styles from "./home.module.scss";
 import rootStore from "../../store/rootStore";
 import {observer} from "mobx-react-lite";
 import HomeSlider from "./HomeSlider";
 import SubscriptForm from "./SubscriptForm";
 
+import styles from "./home.module.scss";
 
+const news = [new1, new2, new3];
 
 const Home = () => {
     const { productStore } = rootStore;

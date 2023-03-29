@@ -1,12 +1,13 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
-import styles from "./nav.module.scss"
+import {Link, NavLink} from "react-router-dom";
 import {useLanguage} from "../../context/setting";
 import {observer} from "mobx-react-lite";
-import {SlArrowDown} from "react-icons/sl"
+import {SlArrowDown} from "react-icons/sl";
+
+import styles from "./nav.module.scss";
 
 import { useHref } from "react-router-dom"
-import {MenuIcon, FavoriteIcon, SearchIcon, OrderIcon, UserIcon} from "../../assets/icon";
+import {MenuIcon, FavoriteIcon, SearchIcon, OrderIcon} from "../../assets/icon";
 import UserIdentification from "./UserIdentification";
 
 const Nav = () => {
@@ -25,31 +26,31 @@ const Nav = () => {
             <div className={styles.left_block}>
                 <MenuIcon color={isHome? "#FFFFFF":"#E0BEA2"}/>
                 <NavLink
-                    to="card"
+                    to="new"
                     style={isHome? mainStyle: {}}
                     className={({ isActive}) =>
                          isActive ? styles.active : ""
                     }
                 >
+                    {text.new}
+                </NavLink>
+                <NavLink
+                    to="card"
+                    style={isHome? mainStyle: {}}
+                    className={({ isActive}) =>
+                        isActive ? styles.active : ""
+                    }
+                >
                     {text.card}
                 </NavLink>
                 <NavLink
-                    to="order"
+                    to="about-us"
                     style={isHome? mainStyle: {}}
                     className={({ isActive}) =>
                         isActive ? styles.active : ""
                     }
                 >
-                    {text.order}
-                </NavLink>
-                <NavLink
-                    to="result"
-                    style={isHome? mainStyle: {}}
-                    className={({ isActive}) =>
-                        isActive ? styles.active : ""
-                    }
-                >
-                    {text.result}
+                    {text.aboutUs}
                 </NavLink>
             </div>
             <NavLink
@@ -70,7 +71,7 @@ const Nav = () => {
                 {/*<UserIcon color={isHome? "#FFFFFF":"#E0BEA2"} />*/}
                 <UserIdentification isHome={isHome}/>
                 <FavoriteIcon color={isHome? "#FFFFFF":"#E0BEA2"}/>
-                <OrderIcon color={isHome? "#FFFFFF":"#E0BEA2"} />
+                <Link to="order"><OrderIcon color={isHome? "#FFFFFF":"#E0BEA2"} /></Link>
 
             </div>
 

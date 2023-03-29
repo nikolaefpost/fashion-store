@@ -1,9 +1,10 @@
 import React, {useRef, useState} from 'react';
-import styles from "../catalog.module.scss";
 import {AiOutlineDown} from "react-icons/ai";
 import RangeSlider from "../../../componets/rangeSlider/RangeSlider";
 import rootStore from "../../../store/rootStore";
 import {useOnClickOutside} from "../../../hooks/useOnclickOutside";
+
+import styles from "../catalog.module.scss";
 
 const SetPrice = () => {
     const {productStore} = rootStore;

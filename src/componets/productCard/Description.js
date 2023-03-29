@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import cn from "classnames";
-import styles from "./productCard.module.scss";
 import {AiOutlineRight} from "react-icons/ai";
+
+import styles from "./productCard.module.scss";
 
 const Description = ({title, children}) => {
 

@@ -1,9 +1,7 @@
 const storage = window.localStorage;
 
 export const recentlyWatchedSave = (id) => {
-
     let saved;
-
     if (!storage.getItem("recentlyWatched")) {
         saved = [id]
         storage.setItem("recentlyWatched", JSON.stringify(saved));
@@ -15,7 +13,6 @@ export const recentlyWatchedSave = (id) => {
                 saved.push(id);
             } else saved.push(id);
             storage.setItem("recentlyWatched", JSON.stringify(saved));
-            console.log("match")
         }
     }
 }

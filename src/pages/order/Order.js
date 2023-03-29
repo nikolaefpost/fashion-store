@@ -1,28 +1,36 @@
-import React, { useState } from 'react';
-import {useLanguage} from "../../context/setting";
-import BootstrapModal from "../../componets/modal/BootstrapModal";
-import styles from "./order.module.scss"
-import Form from "../../componets/form/Form";
-// import {useRoot} from "../../context/rootStore";
+import React from 'react';
 import {observer} from "mobx-react-lite";
 import rootStore from "../../store/rootStore";
+import {AiOutlineRight} from "react-icons/ai";
+import {useNavigate} from "react-router-dom";
+import OrderList from "./OrderList";
+import Checkout from "./checkout/Checkout";
+
+import styles from "./order.module.scss";
 
 
 const Order = () => {
-    const { userStore } = rootStore;
-    const { text } = useLanguage();
-
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => {
-        if (userStore.user.firstName) setShow(true)
-    };
+    const navigate = useNavigate();
+    const { orderStore, userStore } = rootStore;
+    const  sum  = orderStore.getTotal();
 
     return (
-        <div className={styles.order_form}>
-            <Form/>
-            <BootstrapModal handleClose={handleClose} show={show}/>
+        <div className={styles.order}>
+            <div className={styles.nav_block}>
+                <span onClick={()=>navigate("/")}>Главная</span>
+                <AiOutlineRight/>
+                <span>Корзина</span>
+            </div>
+            <OrderList order={orderStore.order} total={sum} />
+            <Checkout
+                formPersonalInfo={userStore.formPersonalInfo}
+                formDeliveryRadio={userStore.formDeliveryRadio}
+                formDeliveryAddress={userStore.formDeliveryAddress}
+                formPaymentRadio={userStore.formPaymentRadio}
+                sum={sum}
+                setPurchase={orderStore.setPurchase}
+                user={userStore.user}
+            />
         </div>
     );
 };

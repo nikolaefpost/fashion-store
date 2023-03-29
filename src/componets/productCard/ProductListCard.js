@@ -1,13 +1,12 @@
 import React from 'react';
+
 import styles from "../../pages/catalog/catalog.module.scss";
 
 
 
 const ProductListCard = ({data, handleTransition, style}) => {
-    // console.log(data)
     return (
         <div
-            // key={data.title}
             style={style}
             onClick={()=>handleTransition(data.id)}
         >

@@ -11,12 +11,12 @@ import styles from "./product.module.scss";
 
 const Product = () => {
     let {cardId} = useParams();
-    const {productStore} = rootStore;
+    const {productStore, orderStore} = rootStore;
     const saved = getRecentlyWatched();
     const dataWhile = productStore.product.slice(5,7);
     const dataAdditional = productStore.product.slice(11,15);
     const dataLike = productStore.product.slice(1,5);
-    const dataRecentlyWatched = saved.map(id => productStore.product.find(el => el.id === id))
+    const dataRecentlyWatched = saved.map(id => productStore.product.find(el => el.id === id));
     const currentProduct = productStore.product.find(el => el.id === parseInt(cardId));
 
     const navigate = useNavigate();
@@ -49,6 +49,8 @@ const Product = () => {
                 dataLike={dataLike}
                 dataRecentlyWatched={dataRecentlyWatched}
                 handleTransition={handleTransition}
+                setProduct={orderStore.setProducts}
+                cardId={cardId}
             />
         </div>
     );

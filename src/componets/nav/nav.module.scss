@@ -41,8 +41,28 @@
     @include display-flex;
     gap: 30px;
 
+    & a{
+      & svg{
+        margin-bottom: -3px;
+      }
+    }
+
     & .user_block{
       position: relative;
+
+      & .account{
+
+        color: $main;
+        & svg{
+          width: 25px;
+          height: 25px;
+          margin-bottom: -3px;
+        }
+      }
+
+      & .color{
+        color: #FFFFFF;
+      }
     }
 
     & .language{

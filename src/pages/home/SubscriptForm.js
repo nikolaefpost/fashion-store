@@ -3,7 +3,6 @@ import InputForm from "../../componets/inputForm/InputForm";
 import * as yup from "yup";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup/dist/yup";
-
 import rootStore from "../../store/rootStore";
 import {observer} from "mobx-react-lite";
 

@@ -1,6 +1,5 @@
 import {
     makeAutoObservable,
-    // runInAction,
     configure,
 } from "mobx";
 
@@ -83,9 +82,6 @@ export class ProductData {
         this.sortInputMinMax.max = Math.round(max * this.ratio);
     }
 
-    // setInputPrice = () =>{
-    //      this.sortInputMinMax = {min: this.sortMinMax.min*this.ratio, max: this.sortMinMax.max*this.ratio}
-    // }
 
     setInputMinPrice = (min) => {
         if (min < this.sortInputMinMax.max - 90) {
@@ -194,24 +190,4 @@ export class ProductData {
         this.setList(product)
         this.isLoading = false;
     }
-
-
-    // get total() {
-    //     let count = 0;
-    //     let sum = this.order.reduce((acc, cur) => {
-    //         if (cur.cmt>0) count++;
-    //         return acc + cur.cmt * cur.price;
-    //     }, 0).toFixed(2)
-    //     return {sum, count}
-    // }
-    //
-    //
-    // changeCnt = (id, cmt) => {
-    //     let product = this.order.find(pr => pr.id === id);
-    //     if (product) product.cmt = cmt;
-    // }
-    //
-    // deleteProduct = (id) => {
-    //     this.order = this.order.filter(item => item.id !== id)
-    // }
 }

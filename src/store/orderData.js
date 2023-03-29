@@ -4,63 +4,93 @@ import {
 } from "mobx";
 configure({ enforceActions: 'observed' })
 
+const options = {day: 'numeric', month: 'numeric', year: 'numeric'};
 
 export class OrderData {
+    purchase = [];
     order = [];
+    orderNumber = 1;
+    storage = window.localStorage;
 
 
     constructor(rootStore) {
-
         makeAutoObservable(this,{ rootStore: false })
         this.rootStore = rootStore
+        this.getOrderStorage()
+        this.getPurchaseStorage()
+        this.getOrderNumberStorage()
     }
 
 
-    setProducts = (apiData) => {
-        this.order = apiData
+    setProducts = (product) => {
+        this.order.push(product)
+        this.storage.setItem("orderList", JSON.stringify(this.order));
     }
 
+    decQuantity = (id ) => {
+        this.order = this.order.map(el=>el.id === id? {...el, quantity: el.quantity-1}: el);
+        this.storage.setItem("orderList", JSON.stringify(this.order));
+    }
 
+    incQuantity = (id ) => {
+        this.order = this.order.map(el=>el.id === id? {...el, quantity: el.quantity+1}: el);
+        this.storage.setItem("orderList", JSON.stringify(this.order));
+    }
 
-    // getProducts = () => {
-    //     this.isLoading = true;
-    //         this.employeeService.getEmployees().then((data) => {
-    //             runInAction(() => {
-    //                 this.setProducts(data);
-    //                 this.isLoading = false;
-    //             })
-    //         })
-    // }
+    deleteProduct = (id) =>{
+        this.order = this.order.filter(el=>el.id !== id);
+        this.storage.setItem("orderList", JSON.stringify(this.order));
+    }
 
-    // *getProductsFlow(){
-    //     this.isLoading = true;
-    //     const order = yield this.employeeService.getEmployeesAsyncAwait(apiProdUrl);
-    //     const category = yield this.employeeService.getEmployeesAsyncAwait(apiCategUrl);
-    //     this.setProducts(order);
-    //     this.setCategory(category);
-    //     this.isLoading = false;
-    // }
-    //
-    //
-    // get total() {
-    //     let count = 0;
-    //     let sum = this.order.reduce((acc, cur) => {
-    //         if (cur.cmt>0) count++;
-    //          return acc + cur.cmt * cur.price;
-    //     }, 0).toFixed(2)
-    //     return {sum, count}
-    // }
-    //
-    //
-    // changeCnt = (id, cmt) => {
-    //     let product = this.order.find(pr => pr.id === id);
-    //     if (product) product.cmt = cmt;
-    // }
-    //
-    // deleteProduct = (id) => {
-    //     this.order = this.order.filter(item => item.id !== id)
-    // }
+    setPurchase = (deliveryInfo) =>{
+        const today = new Date();
+        const currentPurchase = {
+            date: today.toLocaleDateString('de-DE', options),
+            orderNumber: this.orderNumber++,
+            order: this.order,
+            deliveryInfo: deliveryInfo,
+            status: "В работе",
+            total: this.getTotal()
+        }
+        this.purchase.push(currentPurchase);
+        this.storage.setItem("purchaseList", JSON.stringify(this.purchase));
+        this.storage.setItem("orderNumber", JSON.stringify(this.orderNumber));
+        this.order = []
+        this.deleteOrderStorage()
+
+    }
+
+    getOrderStorage = () => {
+        if (this.storage.getItem("orderList")) {
+            this.order = JSON.parse(this.storage.getItem("orderList"));
+        }
+    }
+
+    getPurchaseStorage = () => {
+        if (this.storage.getItem("purchaseList")) {
+            this.purchase = JSON.parse(this.storage.getItem("purchaseList"));
+        }
+        // this.storage.setItem("purchaseList", JSON.stringify([]));
+    }
+
+    getOrderNumberStorage = () => {
+        if (this.storage.getItem("orderNumber")) {
+            this.orderNumber = this.storage.getItem("orderNumber");
+        }
+    }
+
+    deleteOrderStorage = ()=>{
+        this.storage.orderList = [];
+    }
+
+    deletePurchaseStorage = ()=>{
+        this.storage.purchaseList = [];
+    }
+
+    getTotal() {
+        return this.order.reduce((acc, cur) => {
+            const product = this.rootStore.productStore.product.find(pr=>pr.id === cur.id)
+             return product ? acc + cur.quantity * product?.price : 0;
+        }, 0).toFixed()
+    }
 }
-
-// const data = new OrderData();
-// export default data;

@@ -8,7 +8,6 @@ const FormAuth = ({handleTransition, setModal}) => {
     const {userStore} = rootStore;
     const [isNewPassword, setIsNewPassword] = useState(false);
 
-
     return (!isNewPassword ?
             <MainAuth
                 handleTransition={handleTransition}

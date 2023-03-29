@@ -1,7 +1,7 @@
 import React from 'react';
-
-import styles from "./error404.module.scss"
 import {Link} from "react-router-dom";
+
+import styles from "./error404.module.scss";
 
 const Error404 = () => {
 

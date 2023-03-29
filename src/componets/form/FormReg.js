@@ -5,12 +5,9 @@ import FirstStep from "./RegStep/FirstStep";
 import SecondStep from "./RegStep/SecondStep";
 
 const FormReg = ({handleTransition, setModal}) => {
-
     const [user, setUser] = useState({});
-
     const [isCheckEmail, setIsCheckEmail] = useState(false);
     const {userStore} = rootStore;
-
     useEffect(()=>{
         if (isCheckEmail) userStore.handleSetUser(user)
     }, [isCheckEmail, user])

@@ -1,7 +1,8 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {AiOutlineClose} from "react-icons/ai"
-import styles from "./modal.module.scss"
 import Portal from "./Portal";
+
+import styles from "./modal.module.scss"
 
 const Modal = ({fn, children}) => {
 

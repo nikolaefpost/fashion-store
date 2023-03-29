@@ -1,10 +1,11 @@
 import React, {useRef, useState} from 'react';
 import {AiOutlineDown} from "react-icons/ai";
-import styles from "../catalog.module.scss";
 import cn from "classnames";
 import {observer} from "mobx-react-lite";
 import rootStore from "../../../store/rootStore";
 import {useOnClickOutside} from "../../../hooks/useOnclickOutside";
+
+import styles from "../catalog.module.scss";
 
 const colorList =["white", "grey", "beige"];
 

@@ -5,7 +5,6 @@ import FormReg from "./FormReg";
 
 const Form = ({setModal}) => {
     const [isAuth, setIsAuth] = useState(false)
-
     const authToReg = () => {
         setIsAuth(true);
     }

@@ -1,10 +1,9 @@
 import React from 'react';
-import {useWindowSize} from "../../hooks/useWindowSize";
-
-import styles from "./catalog.module.scss";
 import {useNavigate} from "react-router-dom";
 import ProductListCard from "../../componets/productCard/ProductListCard";
 import {recentlyWatchedSave} from "../../helpers/recentlyWatchedSave";
+
+import styles from "./catalog.module.scss";
 
 
 const ProductList = ({products}) => {

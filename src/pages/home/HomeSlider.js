@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {AiOutlineRight, AiOutlineLeft} from "react-icons/ai"
 import {category1, category2, category3, category4} from "../../assets/img";
 import cn from "classnames";
+
 import styles from "./home.module.scss";
 
 const category = {
