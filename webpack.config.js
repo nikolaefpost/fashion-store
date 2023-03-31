@@ -1,6 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let conf = {
     entry: './src/index.js',
@@ -12,7 +12,7 @@ let conf = {
     },
     devServer: {
         static: {
-            directory: path.join(__dirname, '.'),
+            directory: path.join(__dirname, 'docs'),
         },
         compress: true,
         port: 3000,
@@ -21,12 +21,19 @@ let conf = {
         historyApiFallback: true,
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "index.html")
+        }),
         new MiniCssExtractPlugin({
             filename: "main.css"
         }),
     ],
     module: {
         rules: [
+            {
+                test: /\.html$/i,
+                use: "html-loader",
+            },
             {
                 test: /\.js$/,
                 exclude: path.resolve(__dirname, "node_modules"),

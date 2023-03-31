@@ -3,7 +3,7 @@
   \******************************************************************/
 
 /*!**********************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/catalog/catalog.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/catalog/catalog.module.scss ***!
   \**********************************************************************************************************************************************************************************************************************************/
 .catalog-module__content--Xm43G {
   padding: 95px 150px 100px;
@@ -228,7 +228,7 @@
   background: #F1DDAA;
 }
 /*!**********************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/rangeSlider/rangeSlider.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/rangeSlider/rangeSlider.module.scss ***!
   \**********************************************************************************************************************************************************************************************************************************************/
 .rangeSlider-module__container--mzF7a {
   width: 200px;
@@ -270,7 +270,7 @@
   left: calc(100% - 10px);
 }
 /*!******************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/order/order.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/order/order.module.scss ***!
   \******************************************************************************************************************************************************************************************************************************/
 .order-module__order--xjh7c {
   padding: 95px 150px 100px;
@@ -464,7 +464,7 @@
   color: #252525;
 }
 /*!******************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/inputForm/inputForm.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/inputForm/inputForm.module.scss ***!
   \******************************************************************************************************************************************************************************************************************************************/
 .inputForm-module__input_block--rzEJP {
   width: 100%;
@@ -570,7 +570,7 @@
   opacity: 0;
 }
 /*!******************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/order/checkout/checkout.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/order/checkout/checkout.module.scss ***!
   \******************************************************************************************************************************************************************************************************************************************/
 .checkout-module__checkout--AqH19 {
   margin-top: 70px;
@@ -706,7 +706,7 @@
   color: #252525;
 }
 /*!******************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/nav/nav.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/nav/nav.module.scss ***!
   \******************************************************************************************************************************************************************************************************************************/
 .nav-module__nav--HTSVJ {
   display: flex;
@@ -785,7 +785,7 @@
   text-transform: uppercase;
 }
 /*!**********************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/modal/modal.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/modal/modal.module.scss ***!
   \**********************************************************************************************************************************************************************************************************************************/
 .modal-module__modal--dL5Gi {
   position: fixed;
@@ -826,7 +826,7 @@
   display: none;
 }
 /*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/form/form.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/form/form.module.scss ***!
   \********************************************************************************************************************************************************************************************************************************/
 .form-module__user_form--kV45d h3 {
   font-weight: 300;
@@ -888,7 +888,7 @@
   color: #252525;
 }
 /*!************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/footer/footer.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/footer/footer.module.scss ***!
   \************************************************************************************************************************************************************************************************************************************/
 .footer-module__container--sTirR {
   display: flex;
@@ -932,7 +932,7 @@
   filter: drop-shadow(0px 5px 7px rgba(37, 37, 37, 0.15));
 }
 /*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/layout/layout.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/layout/layout.module.scss ***!
   \********************************************************************************************************************************************************************************************************************************/
 body {
   font-family: Explora, cursive;
@@ -962,7 +962,7 @@ span {
   position: relative;
 }
 /*!************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/Error404/error404.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/Error404/error404.module.scss ***!
   \************************************************************************************************************************************************************************************************************************************/
 .error404-module__text--t7rHl {
   width: 100vw;
@@ -984,7 +984,7 @@ span {
   color: #E0BEA2;
 }
 /*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/home/home.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/home/home.module.scss ***!
   \****************************************************************************************************************************************************************************************************************************/
 .home-module__content--outwt {
   position: relative;
@@ -1128,7 +1128,7 @@ span {
   color: #252525;
 }
 /*!**********************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/productCard/productCard.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/productCard/productCard.module.scss ***!
   \**********************************************************************************************************************************************************************************************************************************************/
 .productCard-module__content--fJ44M {
   margin-top: 30px;
@@ -1392,7 +1392,7 @@ span {
   gap: 16px;
 }
 /*!**********************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/product/product.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/product/product.module.scss ***!
   \**********************************************************************************************************************************************************************************************************************************/
 .product-module__content--iOh_D {
   padding: 95px 150px 100px;
@@ -1422,7 +1422,7 @@ span {
   margin: 0 5px;
 }
 /*!******************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/purchases/purchases.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/purchases/purchases.module.scss ***!
   \******************************************************************************************************************************************************************************************************************************************/
 .purchases-module__history_purchase--Zx5mm {
   margin-top: 20px;
@@ -1601,7 +1601,7 @@ span {
   margin-bottom: 20px;
 }
 /*!****************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/personal/personalArea.module.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/pages/personal/personalArea.module.scss ***!
   \****************************************************************************************************************************************************************************************************************************************/
 .personalArea-module__personal--Wqrtw {
   padding: 95px 150px 100px;
