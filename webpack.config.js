@@ -7,8 +7,8 @@ let conf = {
     output: {
         path: path.resolve(__dirname, './docs'),
         filename: 'main.js',
-        publicPath: '/docs/',
-        assetModuleFilename: "assets/[name][ext]"
+        publicPath: '/',
+        assetModuleFilename: "docs/assets/[name][ext]"
     },
     devServer: {
         static: {
