@@ -7,6 +7,7 @@ import styles from "./catalog.module.scss";
 
 
 const ProductList = ({products}) => {
+    console.log(`${id}`)
     const navigate = useNavigate();
     const handleTransition = (id) => {
         recentlyWatchedSave(id)
