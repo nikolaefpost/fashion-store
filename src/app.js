@@ -15,11 +15,11 @@ export const router = createBrowserRouter([
                 element: <Home  />,
             },
             {
-                path: "/card",
+                path: "card",
                 element: <Catalog  />,
             },
             {
-                path: "/card/:cardId",
+                path: "card/:cardId",
                 element: <Product />,
             },
             {
