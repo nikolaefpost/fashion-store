@@ -33,7 +33,7 @@ const Nav = () => {
                 >
                     {text.new}
                 </NavLink>
-                <NavLink>
+                <NavLink
                     to="card"
                     style={isHome? mainStyle: {}}
                     className={({ isActive}) =>
