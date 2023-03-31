@@ -35,7 +35,7 @@ const Nav = () => {
                     {text.new}
                 </NavLink>
                 <NavLink
-                    to="card"
+                    to="/card"
                     style={isHome? mainStyle: {}}
                     className={({ isActive}) =>
                         isActive ? styles.active : ""
@@ -54,7 +54,7 @@ const Nav = () => {
                 </NavLink>
             </div>
             <NavLink
-                to=""
+                to="/"
                 className={styles.title}
                 style={isHome? mainStyle: {}}
             >fashion</NavLink>
