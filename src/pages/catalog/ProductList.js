@@ -10,7 +10,7 @@ const ProductList = ({products}) => {
     const navigate = useNavigate();
     const handleTransition = (id) => {
         recentlyWatchedSave(id)
-         navigate(`/card/${id}`)
+         navigate(`${id}`)
     }
     const styleM ={width: "310px", height: "499px"}
 
