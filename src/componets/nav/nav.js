@@ -3,12 +3,11 @@ import {Link, NavLink} from "react-router-dom";
 import {useLanguage} from "../../context/setting";
 import {observer} from "mobx-react-lite";
 import {SlArrowDown} from "react-icons/sl";
-
-import styles from "./nav.module.scss";
-
 import { useHref } from "react-router-dom"
 import {MenuIcon, FavoriteIcon, SearchIcon, OrderIcon} from "../../assets/icon";
 import UserIdentification from "./UserIdentification";
+
+import styles from "./nav.module.scss";
 
 const Nav = () => {
     const {text, lang, onChangeLang } = useLanguage();

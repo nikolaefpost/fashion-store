@@ -705,85 +705,6 @@
   line-height: 16px;
   color: #252525;
 }
-/*!******************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/nav/nav.module.scss ***!
-  \******************************************************************************************************************************************************************************************************************************/
-.nav-module__nav--HTSVJ {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: transparent;
-  padding: 24px 150px;
-  color: #E0BEA2;
-  position: absolute;
-  width: calc(100% - 300px);
-  opacity: 0.9;
-  z-index: 11;
-}
-.nav-module__nav--HTSVJ .nav-module__left_block--KZy68 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 26px;
-}
-.nav-module__nav--HTSVJ .nav-module__left_block--KZy68 img {
-  margin-right: 78px;
-  fill: #E0BEA2;
-}
-.nav-module__nav--HTSVJ .nav-module__left_block--KZy68 a {
-  text-decoration: none;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 21px;
-  color: #252525;
-  text-transform: uppercase;
-}
-.nav-module__nav--HTSVJ .nav-module__left_block--KZy68 .nav-module__active--GGVo_ {
-  color: #E0BEA2;
-}
-.nav-module__nav--HTSVJ .nav-module__title--WxTF6 {
-  text-decoration: none;
-  font-weight: 300;
-  font-size: 40px;
-  line-height: 40px;
-  color: #E0BEA2;
-  text-transform: uppercase;
-}
-.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-}
-.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp a svg {
-  margin-bottom: -3px;
-}
-.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__user_block--pp1w_ {
-  position: relative;
-}
-.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__user_block--pp1w_ .nav-module__account--CWAz2 {
-  color: #E0BEA2;
-}
-.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__user_block--pp1w_ .nav-module__account--CWAz2 svg {
-  width: 25px;
-  height: 25px;
-  margin-bottom: -3px;
-}
-.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__user_block--pp1w_ .nav-module__color--nSmDL {
-  color: #FFFFFF;
-}
-.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__language--B3xwz {
-  margin-right: 45px;
-}
-.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__language--B3xwz button {
-  border: none;
-  background: transparent;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 21px;
-  color: #E0BEA2;
-  text-transform: uppercase;
-}
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/modal/modal.module.scss ***!
   \**********************************************************************************************************************************************************************************************************************************/
@@ -886,6 +807,85 @@
   font-size: 16px;
   line-height: 19px;
   color: #252525;
+}
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/nav/nav.module.scss ***!
+  \******************************************************************************************************************************************************************************************************************************/
+.nav-module__nav--HTSVJ {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 24px 150px;
+  color: #E0BEA2;
+  position: absolute;
+  width: calc(100% - 300px);
+  opacity: 0.9;
+  z-index: 11;
+}
+.nav-module__nav--HTSVJ .nav-module__left_block--KZy68 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
+.nav-module__nav--HTSVJ .nav-module__left_block--KZy68 img {
+  margin-right: 78px;
+  fill: #E0BEA2;
+}
+.nav-module__nav--HTSVJ .nav-module__left_block--KZy68 a {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #252525;
+  text-transform: uppercase;
+}
+.nav-module__nav--HTSVJ .nav-module__left_block--KZy68 .nav-module__active--GGVo_ {
+  color: #E0BEA2;
+}
+.nav-module__nav--HTSVJ .nav-module__title--WxTF6 {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 40px;
+  color: #E0BEA2;
+  text-transform: uppercase;
+}
+.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp a svg {
+  margin-bottom: -3px;
+}
+.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__user_block--pp1w_ {
+  position: relative;
+}
+.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__user_block--pp1w_ .nav-module__account--CWAz2 {
+  color: #E0BEA2;
+}
+.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__user_block--pp1w_ .nav-module__account--CWAz2 svg {
+  width: 25px;
+  height: 25px;
+  margin-bottom: -3px;
+}
+.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__user_block--pp1w_ .nav-module__color--nSmDL {
+  color: #FFFFFF;
+}
+.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__language--B3xwz {
+  margin-right: 45px;
+}
+.nav-module__nav--HTSVJ .nav-module__right_block--Y2JCp .nav-module__language--B3xwz button {
+  border: none;
+  background: transparent;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #E0BEA2;
+  text-transform: uppercase;
 }
 /*!************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/componets/footer/footer.module.scss ***!
