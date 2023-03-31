@@ -18,8 +18,7 @@ const OrderCard = ({orderElement}) => {
         orderStore.incQuantity(orderElement.id)
     }
 
-    const currentProduct = productStore.product.length ?
-        productStore.product.find(item => item.id === orderElement.id): {};
+    const currentProduct = productStore.getProduct(orderElement.id);
 
     const handleDeleteOrderElement = () => {
         orderStore.deleteProduct(orderElement.id)

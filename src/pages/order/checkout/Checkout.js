@@ -77,7 +77,7 @@ const Checkout = ({
     const watchAllFields = watch();
 
     const onSubmit = handleSubmit(data => {
-        if (data.bonus > currentMaxBonus) data.bonus = 100;
+        if (data.bonus > currentMaxBonus) data.bonus = currentMaxBonus;
         setPurchase(data);
         navigate("/personal")
     });

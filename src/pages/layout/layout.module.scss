@@ -7,8 +7,7 @@
   height: 100vh;
 
   & .content{
-    //padding: 68px 16px 78px 16px ;
-    //min-height: 100%;
+    min-height: calc(100% - 165px);
     position: relative;
   }
 

@@ -2,24 +2,13 @@ import React, {useEffect, useState} from 'react';
 import { AiOutlineHeart} from "react-icons/ai";
 import {product1, product2, product3, product4} from "../../assets/img";
 import Description from "./Description";
-import OtherImage from "../../pages/product/OtherImage";
 import SelectSize from "./productCardElements/SelectSize";
 import SelectColor from "./productCardElements/SelectColor";
 
 import styles from "./productCard.module.scss";
 
 
-const ProductCard = ({
-                         product,
-                         dataWhile,
-                         dataAdditional,
-                         dataLike,
-                         dataRecentlyWatched,
-                         handleTransition,
-                         setProduct,
-                         cardId
-                     }) => {
-
+const ProductCard = ({product, setProduct, cardId}) => {
     const productImg = [product?.image, product1, product2, product3, product4];
     const [openSelect, setOpenSelect] = useState(false);
     const [sizeProduct, setSizeProduct] = useState("Выберите размер");
@@ -29,8 +18,7 @@ const ProductCard = ({
 
     const [currentImg, setCurrentImg] = useState("");
 
-    const styleX = {width: "370px", height: "501px"}
-    const styleL = {width: "274px", height: "401px"}
+
 
     useEffect(() => {
         setCurrentImg(product?.image)
@@ -99,13 +87,6 @@ const ProductCard = ({
                     </div>
                 </div>
             </div>
-            <OtherImage title="Весь образ" handleTransition={handleTransition} style={styleX} data={dataWhile}/>
-            <OtherImage title="Дополните образ" handleTransition={handleTransition} style={styleL}
-                        data={dataAdditional}/>
-            <OtherImage title="Вам может понравиться" handleTransition={handleTransition} style={styleL}
-                        data={dataLike}/>
-            <OtherImage title="Вы недавно смотрели" handleTransition={handleTransition} style={styleL}
-                        data={dataRecentlyWatched}/>
         </div>
     );
 };

@@ -173,6 +173,7 @@
   width: 100%;
   height: calc(100% - 139px);
   padding: 12px;
+  cursor: pointer;
 }
 
 .card_text{
@@ -180,6 +181,7 @@
   @include display-flex(flex-end, center);
   flex-direction: column;
   gap: 5px;
+  cursor: pointer;
 
   & .card_title{
     @include fonts(300, 16px, 19px, $accent);

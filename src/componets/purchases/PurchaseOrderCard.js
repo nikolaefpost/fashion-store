@@ -7,8 +7,7 @@ import styles from "./purchases.module.scss";
 const PurchaseOrderCard = ({order}) => {
 
     const { productStore } = rootStore;
-    const currentProduct = productStore.product.length ?
-        productStore.product.find(item => item.id === order.id): {};
+    const currentProduct = productStore.getProduct(order.id);
     return (
         <div key={currentProduct.id} className={styles.product_position}>
             <div className={styles.title_block}>

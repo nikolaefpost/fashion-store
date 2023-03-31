@@ -6,8 +6,14 @@ import {observer} from "mobx-react-lite";
 import ProductCard from "../../componets/productCard/ProductCard";
 import {getRecentlyWatched, recentlyWatchedSave} from "../../helpers/recentlyWatchedSave";
 import {handlerScrollUp} from "../../helpers/handlerScrollUp";
+import {Error404} from "../index";
 
 import styles from "./product.module.scss";
+import OtherImage from "./OtherImage";
+
+const styleX = {width: "370px", height: "501px"}
+const styleL = {width: "274px", height: "401px"}
+
 
 const Product = () => {
     let {cardId} = useParams();
@@ -17,7 +23,7 @@ const Product = () => {
     const dataAdditional = productStore.product.slice(11,15);
     const dataLike = productStore.product.slice(1,5);
     const dataRecentlyWatched = saved.map(id => productStore.product.find(el => el.id === id));
-    const currentProduct = productStore.product.find(el => el.id === parseInt(cardId));
+    const currentProduct = productStore.getProduct(parseInt(cardId));
 
     const navigate = useNavigate();
     const handleTransition = (id) => {
@@ -29,6 +35,8 @@ const Product = () => {
         navigate("/card");
         productStore.filterCategory(currentProduct.category)
     }
+
+    if(!/^[1-9]+\d*$/.test(cardId) || currentProduct === undefined) return <Error404/>;
 
     handlerScrollUp();
     return (
@@ -52,6 +60,13 @@ const Product = () => {
                 setProduct={orderStore.setProducts}
                 cardId={cardId}
             />
+            <OtherImage title="Весь образ" handleTransition={handleTransition} style={styleX} data={dataWhile}/>
+            <OtherImage title="Дополните образ" handleTransition={handleTransition} style={styleL}
+                        data={dataAdditional}/>
+            <OtherImage title="Вам может понравиться" handleTransition={handleTransition} style={styleL}
+                        data={dataLike}/>
+            <OtherImage title="Вы недавно смотрели" handleTransition={handleTransition} style={styleL}
+                        data={dataRecentlyWatched}/>
         </div>
     );
 };

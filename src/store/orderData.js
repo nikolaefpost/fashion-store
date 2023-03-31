@@ -2,7 +2,8 @@ import {
     makeAutoObservable,
     configure,
 } from "mobx";
-configure({ enforceActions: 'observed' })
+
+configure({enforceActions: 'observed'})
 
 const options = {day: 'numeric', month: 'numeric', year: 'numeric'};
 
@@ -14,7 +15,7 @@ export class OrderData {
 
 
     constructor(rootStore) {
-        makeAutoObservable(this,{ rootStore: false })
+        makeAutoObservable(this, {rootStore: false})
         this.rootStore = rootStore
         this.getOrderStorage()
         this.getPurchaseStorage()
@@ -23,26 +24,27 @@ export class OrderData {
 
 
     setProducts = (product) => {
+        if (this.order.some(pr => pr.id === product.id)) return;
         this.order.push(product)
         this.storage.setItem("orderList", JSON.stringify(this.order));
     }
 
-    decQuantity = (id ) => {
-        this.order = this.order.map(el=>el.id === id? {...el, quantity: el.quantity-1}: el);
+    decQuantity = (id) => {
+        this.order = this.order.map(el => el.id === id ? {...el, quantity: el.quantity - 1} : el);
         this.storage.setItem("orderList", JSON.stringify(this.order));
     }
 
-    incQuantity = (id ) => {
-        this.order = this.order.map(el=>el.id === id? {...el, quantity: el.quantity+1}: el);
+    incQuantity = (id) => {
+        this.order = this.order.map(el => el.id === id ? {...el, quantity: el.quantity + 1} : el);
         this.storage.setItem("orderList", JSON.stringify(this.order));
     }
 
-    deleteProduct = (id) =>{
-        this.order = this.order.filter(el=>el.id !== id);
+    deleteProduct = (id) => {
+        this.order = this.order.filter(el => el.id !== id);
         this.storage.setItem("orderList", JSON.stringify(this.order));
     }
 
-    setPurchase = (deliveryInfo) =>{
+    setPurchase = (deliveryInfo) => {
         const today = new Date();
         const currentPurchase = {
             date: today.toLocaleDateString('de-DE', options),
@@ -79,18 +81,18 @@ export class OrderData {
         }
     }
 
-    deleteOrderStorage = ()=>{
+    deleteOrderStorage = () => {
         this.storage.orderList = [];
     }
 
-    deletePurchaseStorage = ()=>{
+    deletePurchaseStorage = () => {
         this.storage.purchaseList = [];
     }
 
     getTotal() {
         return this.order.reduce((acc, cur) => {
-            const product = this.rootStore.productStore.product.find(pr=>pr.id === cur.id)
-             return product ? acc + cur.quantity * product?.price : 0;
+            const product = this.rootStore.productStore.getProduct(cur.id)
+            return product.price ? acc + cur.quantity * product?.price : 0;
         }, 0).toFixed()
     }
 }

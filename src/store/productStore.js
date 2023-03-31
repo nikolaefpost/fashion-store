@@ -1,6 +1,6 @@
 import {
     makeAutoObservable,
-    configure,
+    configure
 } from "mobx";
 
 configure({enforceActions: 'observed'})
@@ -10,7 +10,6 @@ const apiProdUrl = 'https://fakestoreapi.com/products'
 const apiCategUrl = 'https://fakestoreapi.com/products/categories'
 
 class EmployeeService {
-
     getEmployees = (apiUrl) => {
         return fetch(apiUrl).then((response) => response.json()).catch(err => {
             console.log(err)
@@ -47,7 +46,8 @@ export class ProductData {
         makeAutoObservable(this, {rootStore: false})
         this.rootStore = rootStore
         this.employeeService = new EmployeeService()
-        this.getProductsFlow()
+        // this.getProductsFlow()
+        // this.getProducts()
 
     }
 
@@ -109,7 +109,7 @@ export class ProductData {
             dataList = this.product;
         }
 
-        if (this.sortMinMax.min !== 0 || this.sortMinMax.max !== 184){
+        if (this.sortMinMax.min !== 0 || this.sortMinMax.max !== 184) {
             this.changePriseRange = true
             dataList = dataList.filter((pr) => pr.price > this.sortInputMinMax.min && pr.price < this.sortInputMinMax.max)
         }
@@ -127,11 +127,11 @@ export class ProductData {
         }
     }
 
-    setSortingOption = (option) =>{
+    setSortingOption = (option) => {
         this.sortingOption = option
     }
 
-    sortListByOption = () =>{
+    sortListByOption = () => {
         if (!this.sortingOption) return
         switch (this.sortingOption.id) {
             case 0:
@@ -148,7 +148,7 @@ export class ProductData {
         }
     }
 
-    reset = ()=>{
+    reset = () => {
         this.sortMinMax = {min: 0, max: 184}
         this.changePriseRange = false;
         this.sortInputMinMax = {min: 0, max: 184 * this.ratio}
@@ -157,7 +157,7 @@ export class ProductData {
         this.sortingOption = null;
         if (this.currentCategory !== "") {
             this.list = this.product.filter(item => item.category === this.currentCategory);
-        }else this.list = this.product;
+        } else this.list = this.product;
     }
 
     filterCategory = (category, data = this.product) => {
@@ -170,24 +170,36 @@ export class ProductData {
 
     }
 
-    // getProducts = () => {
-    //     this.isLoading = true;
-    //     this.employeeService.getEmployees().then((data) => {
-    //         runInAction(() => {
-    //             this.setProducts(data);
-    //             this.isLoading = false;
-    //         })
-    //     })
-    // }
-
-    * getProductsFlow() {
+     getProducts = async () => {
         this.isLoading = true;
-        const product = yield this.employeeService.getEmployeesAsyncAwait(apiProdUrl);
-        const category = yield this.employeeService.getEmployeesAsyncAwait(apiCategUrl);
-        this.setProducts(product);
-        this.setCategory(category);
-        this.setMinMaxPrice()
-        this.setList(product)
-        this.isLoading = false;
+        let products = await this.employeeService.getEmployees(apiProdUrl);
+        let category =await this.employeeService.getEmployees(apiCategUrl);
+         this.setProducts(products);
+         this.setCategory(category);
+         this.setMinMaxPrice();
+         this.setList(products);
+         this.isLoading = false;
+        //     runInAction(() => {
+        //         this.setProducts(products);
+        //         this.setCategory(category);
+        //         this.setMinMaxPrice();
+        //         this.setList(products);
+        //         this.isLoading = false;
+        // })
     }
+
+    getProduct = (id) => {
+        return this.product.length? this.product.find(item=>item.id === id) : {}
+    }
+
+    // * getProductsFlow() {
+    //     this.isLoading = true;
+    //     const product = yield this.employeeService.getEmployeesAsyncAwait(apiProdUrl);
+    //     const category = yield this.employeeService.getEmployeesAsyncAwait(apiCategUrl);
+    //     this.setProducts(product);
+    //     this.setCategory(category);
+    //     this.setMinMaxPrice()
+    //     this.setList(product)
+    //     this.isLoading = false;
+    // }
 }

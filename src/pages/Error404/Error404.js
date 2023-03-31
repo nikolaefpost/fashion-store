@@ -8,7 +8,7 @@ const Error404 = () => {
     return (
         <div className={styles.text}>
             <span>Page not found</span>
-            <Link to="/">⟵ return to Home</Link>
+           <div> ⟵ return to <Link to="/"> Home</Link></div>
         </div>
     );
 };
