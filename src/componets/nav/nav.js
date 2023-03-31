@@ -34,15 +34,15 @@ const Nav = () => {
                 >
                     {text.new}
                 </NavLink>
-                <NavLink
-                    to="/card"
+                <NavLin
+                    to="card"
                     style={isHome? mainStyle: {}}
                     className={({ isActive}) =>
                         isActive ? styles.active : ""
                     }
                 >
                     {text.card}
-                </NavLink>
+                </NavLin>
                 <NavLink
                     to="about-us"
                     style={isHome? mainStyle: {}}

@@ -7,19 +7,19 @@ import {Catalog, Order, Layout, Error404, Home, Product, PersonalArea} from "./p
 
 export const router = createBrowserRouter([
     {
-        path: "fashion-store",
+        path: "/",
         element: <Layout  />,
         children: [
             {
-                path: "/fashion-store",
+                path: "",
                 element: <Home  />,
             },
             {
-                path: "card",
+                path: "/card",
                 element: <Catalog  />,
             },
             {
-                path: "card/:cardId",
+                path: "/card/:cardId",
                 element: <Product />,
             },
             {
