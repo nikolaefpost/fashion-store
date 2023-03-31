@@ -7,7 +7,7 @@ import {Catalog, Order, Layout, Error404, Home, Product, PersonalArea} from "./p
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/fashion-store",
         element: <Layout  />,
         children: [
             {
