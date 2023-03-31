@@ -6,7 +6,7 @@
   "scripts": {
     "build-dev": "webpack ",
     "build-prod": "webpack --node-env=production",
-    "clear": "rd /s /q dist",
+    "clear": "rd /s /q docs",
     "start": "webpack serve"
   },
   "browserslist": [
