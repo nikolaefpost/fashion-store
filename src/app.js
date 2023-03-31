@@ -7,11 +7,11 @@ import {Catalog, Order, Layout, Error404, Home, Product, PersonalArea} from "./p
 
 export const router = createBrowserRouter([
     {
-        // path: "/",
+        path: "/",
         element: <Layout  />,
         children: [
             {
-                path: "",
+                path: "/",
                 element: <Home  />,
             },
             {
