@@ -5,9 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let conf = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, './docs'),
+        path: path.resolve(__dirname, 'docs'),
         filename: 'main.js',
-        publicPath: './',
+        // publicPath: './',
         assetModuleFilename: "assets/[name][ext]"
     },
     devServer: {
@@ -107,9 +107,9 @@ let conf = {
         ]
     },
 
-    // resolve: {
-    //     extensions: ['.tsx', '.ts', '.js', ".css", ".scss"],
-    // },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js', ".css", ".scss"],
+    },
 }
 
 module.exports = (env, options) => {
