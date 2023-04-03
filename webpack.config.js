@@ -6,7 +6,8 @@ let conf = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'docs'),
-        filename: 'main.js',
+        clean: true,
+        filename: 'main.[contenthash].js',
         publicPath: '/',
         assetModuleFilename: "assets/[name][ext]"
     },
