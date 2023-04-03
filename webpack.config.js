@@ -8,7 +8,7 @@ let conf = {
         path: path.resolve(__dirname, 'docs'),
         clean: true,
         filename: 'main.[contenthash].js',
-        publicPath: 'auto',
+        publicPath: '/',
         assetModuleFilename: "assets/[name][ext]"
     },
     devServer: {
@@ -37,8 +37,9 @@ let conf = {
             },
             {
                 test: /\.js$/,
+                use: 'babel-loader',
                 exclude: path.resolve(__dirname, "node_modules"),
-                use: 'babel-loader'
+                // exclude: '/node_modules',
             },
             {
                 test: /\.module\.(c|sa|sc)ss$/i,
