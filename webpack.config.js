@@ -8,7 +8,7 @@ let conf = {
         path: path.resolve(__dirname, 'docs'),
         clean: true,
         filename: 'main.[contenthash].js',
-        publicPath: '/',
+        publicPath: 'docs/',
         assetModuleFilename: "assets/[name][ext]"
     },
     devServer: {
