@@ -10,7 +10,6 @@ import styles from "./home.module.scss";
 const news = [new1, new2, new3];
 
 const Home = () => {
-    console.log("render")
     const { productStore } = rootStore;
     return (
         <div className={styles.content}>

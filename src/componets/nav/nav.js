@@ -11,7 +11,8 @@ import styles from "./nav.module.scss";
 
 const Nav = () => {
     const {text, lang, onChangeLang } = useLanguage();
-    let isHome = useHref() === "/"
+    let isHome = useHref() === "#/";
+    console.log(useHref())
 
     const mainStyle = {
         color: "#FFFFFF"
